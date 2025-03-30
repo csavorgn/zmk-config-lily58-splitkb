@@ -52,15 +52,15 @@
         raise_layer {
 // -----------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |        |         |       |       |
-// |       |     |     |  ESC |      |      |                   |      | HOME  | PG_UP  | PG_DN   | END   |       |
-// |       |     |     |      |      |      |                   |      | LEFT  |  UP    | DOWN    | RIGHT |       |
-// |       |     |     |      |      |      |        |  |       |      |C_MUTE |C_VOL_UP|C_VOL_DN |   \   |       |
+// |       |     |     |  ESC |      |      |                   |      | HOME  | PG_DN  | PG_UP   | END   |       |
+// |       |     |     |      |      |      |                   |      | LEFT  |  DOWN  | UP      | RIGHT |       |
+// |       |     |     |      |      |      |        |  |       |      |C_MUTE |C_VOL_DN|C_VOL_UP |   \   |       |
 //                     |      |      |      |    DEL |  |       |      |       |        |
             bindings = <
 &bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                 &trans    &trans     &trans        &trans    &trans    &trans
-&trans        &trans          &trans          &kp ESC         &trans          &trans                       &trans    &kp HOME   &kp PG_UP     &kp PG_DN    &kp END    &trans
-&trans        &trans          &trans          &trans          &trans          &trans                       &trans    &kp LEFT   &kp UP        &kp DOWN     &kp RIGHT  &trans
-&trans        &trans          &trans          &trans          &trans          &trans  &trans      &trans   &trans    &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN &kp BACKSLASH    &trans
+&trans        &trans          &trans          &kp ESC         &trans          &trans                       &trans    &kp HOME   &kp PG_DN     &kp PG_UP    &kp END    &trans
+&trans        &trans          &trans          &trans          &trans          &trans                       &trans    &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT  &trans
+&trans        &trans          &trans          &trans          &trans          &trans  &trans      &trans   &trans    &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP &kp BACKSLASH    &trans
                               &trans          &trans          &trans          &kp DEL                         &trans    &trans     &trans    &trans
             >;
 
