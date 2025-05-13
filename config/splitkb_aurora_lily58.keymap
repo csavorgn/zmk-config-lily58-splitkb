@@ -35,6 +35,27 @@
         };
     };
     
+    macros {
+         alt_f4_m: alt_f4 {  // use it with &alt_f4_m
+            compatible = "zmk,behavior-macro";
+            label = "Alt F4 Macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp F4>;
+        };
+        alt_tab_m: alt_tab {  // use it with &alt_tab_m
+            compatible = "zmk,behavior-macro";
+            label = "Alt TAB Macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp TAB>;
+        };
+        alt_grave_m: alt_grave {  // use it with &alt_grave_m
+            compatible = "zmk,behavior-macro";
+            label = "Alt GRAVE Macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp GRAVE>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -43,14 +64,14 @@
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
 // |   `   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   =   |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT | 
-//                     | CTRL | ALT  | LOWER|  SPACE |  | ENTER | RAISE| RALT  | LWIN  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   |   \   |
+//                     | CTRL | LGUI | LOWER|  SPACE |  | ENTER | RAISE| RGUI  | RALT  |
             bindings = <
-&kp ESC     &kp N1      &kp N2        &kp N3        &kp N4      &kp N5                                &kp N6      &kp N7      &kp N8      &kp N9        &kp N0        &kp MINUS
-&kp GRAVE   &kp Q       &kp W         &kp E         &kp R       &kp T                                 &kp Y       &kp U       &kp I       &kp O         &kp P         &kp EQUAL
-&kp TAB     &hml LGUI A &hml LSHIFT S &hml LALT D   &hml LCTRL F &kp G                                &kp H       &hmr RCTRL J &hmr RALT K &hmr RSHIFT L  &hmr RGUI SEMI &kp SQT
-&kp LSHFT   &kp Z       &kp X         &kp C         &kp V       &kp B       &kp LBKT      &kp RBKT    &kp N       &kp M       &kp COMMA   &kp DOT       &kp FSLH      &kp RSHIFT
-                        &kp LCTRL     &kp LALT      &mo 1       &kp SPACE                             &kp RET     &mo 2       &kp RALT    &kp LWIN
+&kp ESC     &kp N1      &kp N2        &kp N3        &kp N4      &kp N5                                &kp N6      &kp N7       &kp N8      &kp N9        &kp N0        &kp MINUS
+&kp GRAVE   &kp Q       &kp W         &kp E         &kp R       &kp T                                 &kp Y       &kp U        &kp I       &kp O         &kp P         &kp EQUAL
+&kp TAB     &kp A       &hml LSHIFT S &hml LALT D   &hml LCTRL F &kp G                                &kp H       &hmr RCTRL J &hmt RALT K &hmr RSHIFT L &kp SEMI      &kp SQT
+&kp LSHFT   &kp Z       &kp X         &kp C         &kp V       &kp B       &kp LBKT      &kp RBKT    &kp N       &kp M        &kp COMMA   &kp DOT       &kp FSLH      &kp BSLH
+                        &kp LCTRL     &kp LGUI      &mo 1       &kp SPACE                             &kp RET     &mo 2        &kp RGUI    &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -59,16 +80,16 @@
         lower_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-// |       |     |     |  ESC |      |      |                   |      |       |  INS  |      | PSCRN |  F12  |
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
-//                     |      |      |      |        |  |  BSPC |      |       |       |
+// |       |ALTF4|     |  ESC |      |ALTTAB|                   |      |       |  INS  |      | PSCRN |  F12  |
+// |       |     |     |      |      |ALTGRA|                   |      |       |       |      |       |       |
+// |       |     |     |  CAPS|      |      |  LPAR  |  |  RPAR |      |       |       |      |       |       |
+//                     |      |      |      |        |  |  DEL  |      |       |       |
             bindings = <
-&trans     &kp F1     &kp F2           &kp F3            &kp F4           &kp F5               &kp F6      &kp F7    &kp F8    &kp F9    &kp F10        &kp F11   
-&trans     &trans     &trans           &kp ESC           &trans           &trans                &trans    &trans      &kp INS   &trans   &kp PSCRN      &kp F12
-&trans     &trans     &trans           &trans            &trans           &trans                &trans    &trans      &trans    &trans   &trans         &trans
-&trans     &trans     &trans           &trans            &trans           &trans &trans &trans  &trans    &trans      &trans    &trans   &trans         &trans
-                      &trans           &trans            &trans           &trans                &kp BSPC  &trans    &trans    &trans
+&trans     &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10        &kp F11
+&trans     &alt_f4_m  &trans           &kp ESC           &trans           &alt_tab_m                   &trans    &trans      &kp INS   &trans   &kp PSCRN      &kp F12
+&trans     &trans     &trans           &trans            &trans           &alt_grave_m                 &trans    &trans      &trans    &trans   &trans         &trans
+&trans     &trans     &trans           &kp CAPS          &trans           &trans     &kp LPAR &kp RPAR &trans    &trans      &trans    &trans   &trans         &trans
+                      &trans           &trans            &trans           &trans                       &kp DEL   &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -77,16 +98,16 @@
         raise_layer {
 // -----------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |        |         |       |       |
-// |       |     |     |  ESC |      |      |                   |      | HOME  | PG_DN  | PG_UP   | END   |       |
+// |       |     |     |      |      |      |                   |      | HOME  | PG_DN  | PG_UP   | END   |       |
 // |       |     |     |      |      |      |                   |      | LEFT  |  DOWN  | UP      | RIGHT |       |
 // |       |     |     |      |      |      |        |  |       |      |C_MUTE |C_VOL_DN|C_VOL_UP |       |       |
-//                     |      |      |      |    DEL |  |       |      |       |        |
+//                     |      |      |      |   BSCP |  |       |      |       |        |
             bindings = <
 &bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                 &trans    &trans     &trans        &trans    &trans    &trans
-&trans        &trans          &trans          &kp ESC         &trans          &trans                       &trans    &kp HOME   &kp PG_DN     &kp PG_UP    &kp END    &trans
+&trans        &trans          &trans          &trans          &trans          &trans                       &trans    &kp HOME   &kp PG_DN     &kp PG_UP    &kp END    &trans
 &trans        &trans          &trans          &trans          &trans          &trans                       &trans    &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT  &trans
 &trans        &trans          &trans          &trans          &trans          &trans  &trans      &trans   &trans    &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP &trans    &trans
-                              &trans          &trans          &trans          &kp DEL                         &trans    &trans     &trans    &trans
+                              &trans          &trans          &trans          &kp BSCP                     &trans    &trans     &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

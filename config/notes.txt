@@ -1,0 +1,15 @@
+A acuto
+B backslash
+C circonflesso, caps
+E esc, equal
+G grave
+I ins
+m meno
+P pipe, printscreen, plus
+Q question mark
+S slash
+T tilde
+U umlaut, underscore, (uguale)
+alt + tab? - T 
+alt + F4? - K
+
