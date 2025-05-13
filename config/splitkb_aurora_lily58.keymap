@@ -40,19 +40,25 @@
             compatible = "zmk,behavior-macro";
             label = "Alt F4 Macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp F4>;
+            bindings = = <&macro_press &kp LALT>
+                       , <&macro_tap &kp F4>
+                       , <&macro_release &kp LALT>;
         };
         alt_tab_m: alt_tab {  // use it with &alt_tab_m
             compatible = "zmk,behavior-macro";
             label = "Alt TAB Macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp TAB>;
+            bindings =  <&macro_press &kp LALT>
+                       , <&macro_tap &kp TAB>
+                       , <&macro_release &kp LALT>;
         };
         alt_grave_m: alt_grave {  // use it with &alt_grave_m
             compatible = "zmk,behavior-macro";
             label = "Alt GRAVE Macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp GRAVE>;
+            bindings =  <&macro_press &kp LALT>
+                       , <&macro_tap &kp GRAVE>
+                       , <&macro_release &kp LALT>;
         };
     };
     
