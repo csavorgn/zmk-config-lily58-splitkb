@@ -11,5 +11,4 @@ S slash
 T tilde
 U umlaut, underscore, (uguale)
 alt + tab? - T 
-alt + F4? - K
-
+alt + F4? - K 

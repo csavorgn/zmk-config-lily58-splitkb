@@ -72,7 +72,7 @@
 // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
 // |       |ALTF4|     |  ESC |      |  TAB |                   |      |       |  INS  |      | PSCRN |  F12  |
 // |       |     |     |      |      | GRAVE|                   |      |       |       |      |       |       |
-// |       |     |     |  CAPS|      |      |  LPAR  |  |  RPAR |      |       |       |      |       |       |
+// |       |     |     |  CAPS|      |      |  (     |  |  )    |      |       |       |      |       |       |
 //                     |      |      |      |        |  |  DEL  |      |       |       |
             bindings = <
 &trans     &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10        &kp F11
@@ -90,13 +90,13 @@
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |        |         |       |       |
 // |       |     |     |      |      |      |                   |      | HOME  | PG_DN  | PG_UP   | END   |       |
 // |       |     |     |      |      |      |                   |      | LEFT  |  DOWN  | UP      | RIGHT |       |
-// |       |     |     |      |      |      |        |  |       |      |C_MUTE |C_VOL_DN|C_VOL_UP |       |       |
+// |       |     |     |      |      |      |    (   |  |   )   |      |C_MUTE |C_VOL_DN|C_VOL_UP |       |       |
 //                     |      |      |      |   BSPC |  |       |      |       |        |
             bindings = <
 &bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                 &trans    &trans     &trans        &trans    &trans    &trans
 &trans        &trans          &trans          &trans          &trans          &trans                       &trans    &kp HOME   &kp PG_DN     &kp PG_UP    &kp END    &trans
 &trans        &trans          &trans          &trans          &trans          &trans                       &trans    &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT  &trans
-&trans        &trans          &trans          &trans          &trans          &trans  &trans      &trans   &trans    &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP &trans    &trans
+&trans        &trans          &trans          &trans          &trans          &trans  &kp LPAR &kp RPAR    &trans    &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP &trans    &trans
                               &trans          &trans          &trans          &kp BSPC                     &trans    &trans     &trans    &trans
             >;
 
