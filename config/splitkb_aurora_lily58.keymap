@@ -44,6 +44,14 @@
                        <&macro_tap &kp F4>,
                        <&macro_release &kp LALT>;
         };
+        alt_tab_m: alt_tab {  // use it with &alt_tab_m
+            compatible = "zmk,behavior-macro";
+            label = "Alt TAB Macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp TAB>,
+                       <&macro_release &kp LALT>;
+        };
     };
 
     conditional_layers {
@@ -80,13 +88,13 @@
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
 // |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
 // |       | LGUI | LALT | LCTRL | LSHIFT |      |                   | LEFT | DOWN  |  UP   | RIGHT |  INS  |       |
-// |       |      |      |       |        |      |        |  |       | HOME | PG_DN | PG_UP | END   |   -   |   =   |
+// |ALT TAB|      |      |       |        |      |        |  |       | HOME | PG_DN | PG_UP | END   |   -   |   =   |
 //                       |       |        |      |        |  |  DEL  |  M2  |  M3   |       |
             bindings = <
 &trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
 &alt_f4_m  &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
 &trans     &kp LGUI   &kp LALT         &kp LCTRL         &kp LSHIFT       &trans                       &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT &kp INS        &trans
-&trans     &trans     &trans           &kp CAPS          &trans           &trans     &trans &trans     &kp HOME  &kp PG_DN   &kp PG_UP &kp END   &kp MINUS      &kp EQUAL
+&alt_tab_m &trans     &trans           &kp CAPS          &trans           &trans     &trans &trans     &kp HOME  &kp PG_DN   &kp PG_UP &kp END   &kp MINUS      &kp EQUAL
                                        &trans            &trans           &trans     &trans &kp DEL    &mo 2     &mo 3       &trans
             >;
         };
