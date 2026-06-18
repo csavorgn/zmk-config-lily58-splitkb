@@ -88,14 +88,14 @@
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
 // |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
 // |       | LGUI | LALT | LCTRL | LSHIFT |      |                   | LEFT | DOWN  |  UP   | RIGHT |  INS  |       |
-// |ALT TAB|      |      |       |        |      |        |  |       | HOME | PG_DN | PG_UP | END   |   -   |   =   |
+// |       |      |      |       |        |      |        |  |       | HOME | PG_DN | PG_UP | END   |   -   |   =   |
 //                       |       |        |      |        |  |  DEL  |  M2  |  M3   |       |
             bindings = <
 &trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
 &alt_f4_m  &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
 &trans     &kp LGUI   &kp LALT         &kp LCTRL         &kp LSHIFT       &trans                       &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT &kp INS        &trans
-&alt_tab_m &trans     &trans           &kp CAPS          &trans           &trans     &trans &trans     &kp HOME  &kp PG_DN   &kp PG_UP &kp END   &kp MINUS      &kp EQUAL
-                                       &trans            &trans           &trans     &trans &kp DEL    &mo 2     &mo 3       &trans
+&trans     &trans     &trans           &kp CAPS          &trans           &trans     &trans &trans     &kp HOME  &kp PG_DN   &kp PG_UP &kp END   &kp MINUS      &kp EQUAL
+                                       &trans            &trans           &trans     &trans &kp DEL    &mo 2     &kp LSHIFT  &trans
             >;
         };
 
@@ -126,10 +126,11 @@
 // |       |F20 (MIC)|C_MUTE  |C_VOL_DN|C_VOL_UP|PSCRN |        |  |       | HOME | PG_DN | PG_UP  | END     |       |       |
 //                   |        |        |        |      |        |  |       |      |       |        |
             bindings = <
+&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans     &trans        &trans    &trans    &trans
 &bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &trans     &trans        &trans    &trans    &trans
 &trans        &trans          &trans          &trans          &trans          &trans                             &kp LEFT  &kp DOWN   &kp UP        &kp RIGHT &kp INS   &trans
-&trans        &kp F20         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp PSCRN     &kp LPAR &kp RPAR    &kp HOME  &kp PG_DN  &kp PG_UP     &kp END   &trans    &trans
-                                              &trans          &trans          &trans        &kp BSPC &trans      &trans    &trans     &trans
+&trans        &kp F20         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp PSCRN     &trans   &trans      &kp HOME  &kp PG_DN  &kp PG_UP     &kp END   &trans    &trans
+                                              &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans
             >;
         };
 
