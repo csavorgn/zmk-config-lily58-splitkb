@@ -104,15 +104,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
 // |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
-// |       | LGUI | LALT | LCTRL | LSHIFT |      |                   |      |  LEFT | DOWN  |  UP   | RIGHT |       |
+// |       | LGUI | LALT | LCTRL | LSHIFT |      |                   |      |  LEFT |  UP   | DOWN  | RIGHT |       |
 // |       |      |      |       |        |      |        |  |       |      |       |       |       |   -   |   =   |
 //                       |       |        |  M1  | BSPC   |  |       |      |       |       |
             bindings = <
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
-&kp LA(F4) &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
-&trans     &kp LGUI   &kp LALT         &kp LCTRL         &kp LSHIFT       &trans                       &trans    &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT      &trans
-&trans     &trans     &trans           &kp CAPS          &trans           &trans     &trans   &trans   &trans    &trans      &trans    &trans    &kp MINUS      &kp EQUAL
-                                       &trans            &trans           &mo 1      &kp BSPC &trans   &trans    &mo 3       &trans
+&trans     &trans     &trans       &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
+&kp LA(F4) &kp F1     &kp F2       &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
+&trans     &kp LGUI   &kp LALT     &kp LCTRL         &kp LSHIFT       &trans                       &trans    &kp LEFT    &kp UP    &kp DOWN  &kp RIGHT      &trans
+&trans     &trans     &trans       &kp CAPS          &trans           &trans     &trans   &trans   &trans    &trans      &trans    &trans    &kp MINUS      &kp EQUAL
+                                   &trans            &trans           &mo 1      &kp BSPC &trans   &trans    &mo 3       &trans
             >;
         };
 
@@ -123,14 +123,14 @@
 // -----------------------------------------------------------------------------------------------------------
 // |       |         |        |        |        |      |                   |      |       |        |         |       |       |
 // | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |       |  INS   |         | PSCRN |       |
-// |       |         |        |        |        |      |                   |      | HOME  | PG_DN  | PG_UP   | END   |       |
+// |       |         |        |        |        |      |                   |      | HOME  | PG_UP  | PG_DN   | END   |       |
 // |       |         |        |        |        |      |        |  |       |      |       |        |         |       |       |
 //                   |        |        |        |      |        |  |       |      |       |        |
             bindings = <
-&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans     &trans        &trans    &trans    &trans
-&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &kp INS    &trans        &kp PSCRN &trans    &trans
-&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &kp HOME   &kp PG_DN     &kp PG_UP &kp END   &trans
-&trans        &trans          &trans          &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans        &trans    &trans    &trans
+&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans     &trans     &trans     &trans     &trans
+&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &trans     &kp INS    &trans     &kp PSCRN  &trans
+&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &trans
+&trans        &trans          &trans          &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans     &trans     &trans     &trans
                                               &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans
             >;
         };
@@ -140,13 +140,13 @@
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
 // |       |   1  |   2  |   3   |   4    |   5  |                   |  6   |   7   |   8   |  9    |   0   |       |
-// |       |      |      |       |        |      |                   |      | LEFT  | DOWN  |  UP   | RIGHT |       |
+// |       |      |      |       |        |      |                   |      | LEFT  |   UP  |  DOWN | RIGHT |       |
 // |       |      |      |       |        |      |                   |      |       |   ,   |  .    |   -   |  =    |
 //                       |       |        |      |        |  |       |      |       |       |
             bindings = <
 &trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
 &kp RET    &kp N1     &kp N2           &kp N3            &kp N4           &kp N5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT      &trans
+&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &kp LEFT    &kp UP    &kp DOWN  &kp RIGHT      &trans
 &trans     &trans     &trans           &trans            &trans           &trans     &trans &trans     &trans    &trans      &kp COMMA &kp DOT   &kp MINUS      &kp EQUAL
                       &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans
             >;  
