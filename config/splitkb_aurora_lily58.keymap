@@ -85,51 +85,52 @@
         l1_layer {
             display-name = "L1";
 // ------------------------------------------------------------------------------------------------------------
-// |       |      |      |       |        |      |                   |      |       |       |       |       |       |
-// |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
-// |       | LGUI | LALT | LCTRL | LSHIFT |      |                   | LEFT | DOWN  |  UP   | RIGHT |  INS  |       |
-// |       |      |      |       |        |      |        |  |       | HOME | PG_DN | PG_UP | END   |   -   |   =   |
-//                       |       |        |      |        |  |  DEL  |  M2  |  M3   |       |
+// |       |          |      |        |        |      |                   |        |       |       |       |       |       |
+// |  RET  |   1      |   2  |   3    |   4    |   5  |                   |  F6    |  F7   |  F8   | F9    |  F10  |       |
+// |   "{" |  "["     |   (  |   )    |  "]"   |  "}" |                   |        |RSHIFT | RCTRL | RALT  | RGUI  |  F11  |
+// |  CAPS | F20 (MIC)|C_MUTE|C_VOL_DN|C_VOL_UP|PSCRN |        |  |       |        |       |       |       |       |  F12  |
+//                    |      |        |        |      |        |  |  DEL  |   M2   |  M3   |       |
             bindings = <
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
-&alt_f4_m  &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
-&trans     &kp LGUI   &kp LALT         &kp LCTRL         &kp LSHIFT       &trans                       &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT &kp INS        &trans
-&trans     &trans     &trans           &kp CAPS          &trans           &trans     &trans &trans     &kp HOME  &kp PG_DN   &kp PG_UP &kp END   &kp MINUS      &kp EQUAL
-                                       &trans            &trans           &trans     &trans &kp DEL    &mo 2     &kp LSHIFT  &trans
+&trans     &trans     &trans           &trans            &trans           &trans                       &trans     &trans      &trans    &trans    &trans      &trans
+&kp RET    &kp N1     &kp N2           &kp N3            &kp N4           &kp N5                       &kp F6     &kp F7      &kp F8    &kp F9    &kp F10     &trans
+&kp LBRC   &kp LBKT   &kp LPAR         &kp RPAR          &kp RBKT         &kp LBRC                     &trans     &kp RSHIFT  &kp RCTRL &kp RALT  &kp RGUI    &kp F11
+&kp CAPS   &kp F20    &kp C_MUTE       &kp C_VOL_DN      &kp C_VOL_UP     &kp PSCRN  &trans   &trans   &trans     &trans      &trans    &trans    &trans      &kp F12
+                                       &trans            &trans           &trans     &trans   &kp DEL  &mo 2      &mo 3       &trans
             >;
         };
 
         l2_layer {
             display-name = "L2";
 // ------------------------------------------------------------------------------------------------------------
-// |       |          |      |        |        |      |                   |        |       |       |       |       |       |
-// |  RET  |   1      |   2  |   3    |   4    |   5  |                   |  F6    |  F7   |  F8   | F9    |  F10  |       |
-// |   "{" |  "["     |   (  |   )    |  "]"   |  "}" |                   |        |RSHIFT | RCTRL | RALT  | RGUI  |  F11  |
-// |  CAPS | F20 (MIC)|C_MUTE|C_VOL_DN|C_VOL_UP|PSCRN |        |  |       |        |       |       |       |       |  F12  |
-//                    |      |        |        |  M1  | BSPC   |  |       |        |       |       |
+// |       |      |      |       |        |      |                   |      |       |       |       |       |       |
+// |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
+// |       | LGUI | LALT | LCTRL | LSHIFT |      |                   |      |  LEFT | DOWN  |  UP   | RIGHT |       |
+// |       |      |      |       |        |      |        |  |       |      |       |       |       |   -   |   =   |
+//                       |       |        |  M1  | BSPC   |  |       |      |       |       |
             bindings = <
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans     &trans      &trans    &trans    &trans      &trans
-&kp RET    &kp N1     &kp N2           &kp N3            &kp N4           &kp N5                       &kp F6     &kp F7      &kp F8    &kp F9    &kp F10     &trans
-&kp LBRC   &kp LBKT   &kp LPAR         &kp RPAR          &kp RBKT         &kp LBRC                     &trans     &kp RSHIFT  &kp RCTRL &kp RALT  &kp RGUI    &kp F11
-&kp CAPS   &kp F20    &kp C_MUTE       &kp C_VOL_DN      &kp C_VOL_UP     &kp PSCRN &trans   &trans    &trans     &trans      &trans    &trans    &trans      &kp F12
-                                       &trans            &trans           &mo 1     &kp BSPC &trans    &trans     &trans      &trans
+&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
+&kp LA(F4) &kp F1     &kp F2           &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
+&trans     &kp LGUI   &kp LALT         &kp LCTRL         &kp LSHIFT       &trans                       &trans    &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT      &trans
+&trans     &trans     &trans           &kp CAPS          &trans           &trans     &trans   &trans   &trans    &trans      &trans    &trans    &kp MINUS      &kp EQUAL
+                                       &trans            &trans           &mo 1      &kp BSPC &trans   &trans    &mo 3       &trans
             >;
         };
+
 
 
         l3_layer {
             display-name = "L3";
 // -----------------------------------------------------------------------------------------------------------
 // |       |         |        |        |        |      |                   |      |       |        |         |       |       |
-// | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |       |        |         |       |       |
-// |       |         |        |        |        |      |                   | LEFT | DOWN  |  UP    | RIGHT   |  INS  |       |
-// |       |F20 (MIC)|C_MUTE  |C_VOL_DN|C_VOL_UP|PSCRN |        |  |       | HOME | PG_DN | PG_UP  | END     |       |       |
+// | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |       |  INS   |         | PSCRN |       |
+// |       |         |        |        |        |      |                   |      | HOME  | PG_DN  | PG_UP   | END   |       |
+// |       |         |        |        |        |      |        |  |       |      |       |        |         |       |       |
 //                   |        |        |        |      |        |  |       |      |       |        |
             bindings = <
 &trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans     &trans        &trans    &trans    &trans
-&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &trans     &trans        &trans    &trans    &trans
-&trans        &trans          &trans          &trans          &trans          &trans                             &kp LEFT  &kp DOWN   &kp UP        &kp RIGHT &kp INS   &trans
-&trans        &kp F20         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp PSCRN     &trans   &trans      &kp HOME  &kp PG_DN  &kp PG_UP     &kp END   &trans    &trans
+&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &kp INS    &trans        &kp PSCRN &trans    &trans
+&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &kp HOME   &kp PG_DN     &kp PG_UP &kp END   &trans
+&trans        &trans          &trans          &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans        &trans    &trans    &trans
                                               &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans
             >;
         };
@@ -138,14 +139,14 @@
             display-name = "L12";
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
-// | RET   |   1  |   2  |   3   |   4    |   5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
-// |       |      |      |       |        |      |                   | LEFT | DOWN  |  UP   | RIGHT |       |       |
+// |       |   1  |   2  |   3   |   4    |   5  |                   |  6   |   7   |   8   |  9    |   0   |       |
+// |       |      |      |       |        |      |                   |      | LEFT  | DOWN  |  UP   | RIGHT |       |
 // |       |      |      |       |        |      |                   |      |       |   ,   |  .    |   -   |  =    |
 //                       |       |        |      |        |  |       |      |       |       |
             bindings = <
 &trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
 &kp RET    &kp N1     &kp N2           &kp N3            &kp N4           &kp N5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
-&trans     &trans     &trans           &trans            &trans           &trans                       &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT &trans         &trans
+&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT      &trans
 &trans     &trans     &trans           &trans            &trans           &trans     &trans &trans     &trans    &trans      &kp COMMA &kp DOT   &kp MINUS      &kp EQUAL
                       &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans
             >;  
