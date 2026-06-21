@@ -9,6 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+// &trans passa al layer sotto
+// &canc disabilita il tasto
+
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -58,7 +61,7 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
-            then-layer = <4>;
+            then-layer = <3>;
         };
     };
     
@@ -69,16 +72,16 @@
             display-name = "BASE";
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  BSPC |
+// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // |   `   |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// |  TAB  |  Z  |  X  |  C   |  V   |  B   |        |  |       |  N   |  M    |  ,    |  .   |   /   |   \   |
-//                     |      | LCTRL|  M1  |  SPACE |  | ENTER |  M2  |  M3   |       |
+// |  TAB  |  Z  |  X  |  C   |  V   |  B   |        |  |       |  N   |  M    |  ,    |  .   |   /   |  BSPC |
+//                     |      | LCTRL|  M1  |  SPACE |  | ENTER |  M1  |  M2   |       |
             bindings = <
 &trans      &trans      &trans        &trans        &trans         &trans                                &trans      &trans        &trans       &trans        &trans         &trans
-&kp ESC     &kp Q       &kp W         &kp E         &kp R          &kp T                                 &kp Y       &kp U         &kp I        &kp O         &kp P          &kp BSPC
+&kp ESC     &kp Q       &kp W         &kp E         &kp R          &kp T                                 &kp Y       &kp U         &kp I        &kp O         &kp P          &kp BSLH
 &kp GRAVE   &hml LGUI A &hml LALT S   &hml LCTRL D  &hml LSHIFT F  &kp G                                 &kp H       &hmr RSHIFT J &hmr RCTRL K &hmr RALT L   &hmr RGUI SEMI &kp SQT
-&kp TAB     &kp Z       &kp X         &kp C         &kp V          &kp B       &trans        &trans      &kp N       &kp M         &kp COMMA    &kp DOT       &kp FSLH       &kp BSLH
-                                      &trans        &kp LCTRL      &mo 1       &kp SPACE     &kp RET     &mo 2         &mo 3       &trans
+&kp TAB     &kp Z       &kp X         &kp C         &kp V          &kp B       &trans        &trans      &kp N       &kp M         &kp COMMA    &kp DOT       &kp FSLH       &kp BSPC
+                                      &trans        &kp LCTRL      &mo 1       &kp SPACE     &kp RET     &mo 1       &mo 2         &trans
             >;
         };
 
@@ -86,16 +89,16 @@
             display-name = "L1";
 // ------------------------------------------------------------------------------------------------------------
 // |       |          |      |        |        |      |                   |        |       |       |       |       |       |
-// |  RET  |   1      |   2  |   3    |   4    |   5  |                   |  F6    |  F7   |  F8   | F9    |  F10  |       |
-// |   "{" |  "["     |   (  |   )    |  "]"   |  "}" |                   |        |RSHIFT | RCTRL | RALT  | RGUI  |  F11  |
-// |  CAPS | F20 (MIC)|C_MUTE|C_VOL_DN|C_VOL_UP|PSCRN |        |  |       |        |       |       |       |       |  F12  |
-//                    |      |        |        |      |        |  |  DEL  |   M2   |  M3   |       |
+// |  RET  |   1      |   2  |   3    |   4    |   5  |                   |   6    |   7   |   8   |  9    |   0   |   -   |
+// |   "{" |  "["     |   (  |   )    |  "]"   |  "}" |                   |        |RSHIFT | RCTRL | RALT  | RGUI  |   =   |
+// |  CAPS | F20 (MIC)|C_MUTE|C_VOL_DN|C_VOL_UP|PSCRN |        |  |       |  INS   |  LEFT |  UP   | DOWN  | RIGHT |  DEL  |
+//                    |      |        |        |      | BSPC   |  |  DEL  |        |  M2   |       |
             bindings = <
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans     &trans      &trans    &trans    &trans      &trans
-&kp RET    &kp N1     &kp N2           &kp N3            &kp N4           &kp N5                       &kp F6     &kp F7      &kp F8    &kp F9    &kp F10     &trans
-&kp LBRC   &kp LBKT   &kp LPAR         &kp RPAR          &kp RBKT         &kp LBRC                     &trans     &kp RSHIFT  &kp RCTRL &kp RALT  &kp RGUI    &kp F11
-&kp CAPS   &kp F20    &kp C_MUTE       &kp C_VOL_DN      &kp C_VOL_UP     &kp PSCRN  &trans   &trans   &trans     &trans      &trans    &trans    &trans      &kp F12
-                                       &trans            &trans           &trans     &trans   &kp DEL  &mo 2      &mo 3       &trans
+&trans     &trans         &trans           &trans            &trans           &trans                       &trans     &trans      &trans     &trans    &trans      &trans
+&kp RET    &kp N1         &kp N2           &kp N3            &kp N4           &kp N5                       &kp N6     &kp N7      &kp N8     &kp N9    &kp N0      &kp MINUS
+&kp LBRC   &hml LGUI LBKT &hml LALT LPAR   &hml LCTRL RPAR   &hml LSHIFT RBKT &kp LBRC                     &trans     &kp RSHIFT  &kp RCTRL  &kp RALT  &kp RGUI    &kp EQUAL
+&kp CAPS   &kp F20        &kp C_MUTE       &kp C_VOL_DN      &kp C_VOL_UP     &kp PSCRN  &trans   &trans   &kp INS    &kp LEFT    &kp UP     &kp DOWN  &kp RIGH    &kp DEL
+                                           &trans            &trans           &mo 1      &kp BSPC &DEL     &trans     &mo 3       &trans
             >;
         };
 
@@ -103,16 +106,16 @@
             display-name = "L2";
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
-// |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  6   |   7   |   8   |  9    |   0   |  DEL  |
-// |       | LGUI | LALT | LCTRL | LSHIFT |      |                   |      |  LEFT |  UP   | DOWN  | RIGHT |       |
-// |       |      |      |       |        |      |        |  |       |      |       |       |       |   -   |   =   |
-//                       |       |        |  M1  | BSPC   |  |       |      |       |       |
+// |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  F6  |   F7  |   F8  |  F9   |  F10  |  F11  |
+// |       | LGUI | LALT | LCTRL | LSHIFT |      |                   |      |RSHIFT | RCTRL | RALT  | RGUI  |  F12  |
+// |       |      |      |       |        |      |        |  |       |      | HOME  | PG_UP | PG_DN | END   |       |
+//                       |       |        |      |        |  |       |      |       |       |
             bindings = <
-&trans     &trans     &trans       &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
-&kp LA(F4) &kp F1     &kp F2       &kp F3            &kp F4           &kp F5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
-&trans     &kp LGUI   &kp LALT     &kp LCTRL         &kp LSHIFT       &trans                       &trans    &kp LEFT    &kp UP    &kp DOWN  &kp RIGHT      &trans
-&trans     &trans     &trans       &kp CAPS          &trans           &trans     &trans   &trans   &trans    &trans      &trans    &trans    &kp MINUS      &kp EQUAL
-                                   &trans            &trans           &mo 1      &kp BSPC &trans   &trans    &mo 3       &trans
+&trans     &trans     &trans       &trans            &trans           &trans                       &trans    &trans      &trans     &trans     &trans         &trans
+&kp LA(F4) &kp F1     &kp F2       &kp F3            &kp F4           &kp F5                       &kp F6    &kp F7      &kp F8     &kp F9     &kp F10        &kp F11
+&trans     &kp LGUI   &kp LALT     &kp LCTRL         &kp LSHIFT       &trans                       &trans    &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI       &kp F12
+&trans     &trans     &trans       &kp CAPS          &trans           &trans     &trans   &trans   &trans    &kp HOME    &kp PG_UP  &kp PG_DN  &kp END        &trans
+                                   &trans            &trans           &trans     &trans   &trans   &trans    &trans      &trans
             >;
         };
 
@@ -122,34 +125,17 @@
             display-name = "L3";
 // -----------------------------------------------------------------------------------------------------------
 // |       |         |        |        |        |      |                   |      |       |        |         |       |       |
-// | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |       |  INS   |         | PSCRN |       |
-// |       |         |        |        |        |      |                   |      | HOME  | PG_UP  | PG_DN   | END   |       |
+// | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |       |        |         |       |       |
+// |       |         |        |        |        |      |                   |      |       |        |         |       |       |
 // |       |         |        |        |        |      |        |  |       |      |       |        |         |       |       |
 //                   |        |        |        |      |        |  |       |      |       |        |
             bindings = <
 &trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans     &trans     &trans     &trans     &trans
-&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &trans     &kp INS    &trans     &kp PSCRN  &trans
-&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &trans
+&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &trans     &trans     &trans     &trans     &trans
+&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans     &trans     &trans     &trans     &trans
 &trans        &trans          &trans          &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans     &trans     &trans     &trans
                                               &trans          &trans          &trans        &trans   &trans      &trans    &trans     &trans
             >;
-        };
-
-        l4_layer {
-            display-name = "L12";
-// ------------------------------------------------------------------------------------------------------------
-// |       |      |      |       |        |      |                   |      |       |       |       |       |       |
-// |       |   1  |   2  |   3   |   4    |   5  |                   |  6   |   7   |   8   |  9    |   0   |       |
-// |       |      |      |       |        |      |                   |      | LEFT  |   UP  |  DOWN | RIGHT |       |
-// |       |      |      |       |        |      |                   |      |       |   ,   |  .    |   -   |  =    |
-//                       |       |        |      |        |  |       |      |       |       |
-            bindings = <
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans    &trans         &trans
-&kp RET    &kp N1     &kp N2           &kp N3            &kp N4           &kp N5                       &kp N6    &kp N7      &kp N8    &kp N9    &kp N0         &kp DEL
-&trans     &trans     &trans           &trans            &trans           &trans                       &trans    &kp LEFT    &kp UP    &kp DOWN  &kp RIGHT      &trans
-&trans     &trans     &trans           &trans            &trans           &trans     &trans &trans     &trans    &trans      &kp COMMA &kp DOT   &kp MINUS      &kp EQUAL
-                      &trans           &trans            &trans           &trans                       &trans    &trans      &trans    &trans
-            >;  
         };
     };
 };
