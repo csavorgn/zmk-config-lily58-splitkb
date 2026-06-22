@@ -107,7 +107,7 @@
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |        |      |                   |      |       |       |       |       |       |
 // |ALT F4 |  F1  |  F2  |  F3   |  F4    |  F5  |                   |  F6  |   F7  |   F8  |  F9   |  F10  |  F11  |
-// |       |      |      |       |        |      |                   |      |       |       |       |       |  F12  |
+// |       |      |      |       |        |      |                   |      |CAPS WR|       |       |       |  F12  |
 // |       |      |      |       |        |      |        |  |       |      | HOME  | PG_UP | PG_DN | END   |       |
 //                       |       |        |      |        |  |       |      |       |       |
             bindings = <
@@ -125,14 +125,14 @@
             display-name = "L3";
 // -----------------------------------------------------------------------------------------------------------
 // |       |         |        |        |        |      |                   |      |       |        |         |       |       |
-// | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |       |        |         |       |       |
-// |       |         |        |        |        |      |                   |      |       |        |         |       |       |
-// |       |         |        |        |        |      |        |  |       |      |       |        |         |       |       |
+// | BTCLR | BT1     | BT2    |  BT3   |  BT4   |  BT5 |                   |      |OUT USB|        |         |       |       |
+// |       |         |        |        |        |      |                   |      |       |        |  LG(L)  |       |       |
+// |       |         |        |        |        |      |        |  |       |      |       |        |         |       | RESET |
 //                   |        |        |        |OUT BL|        |  |       |      |       |        |
             bindings = <
 &trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans       &trans     &trans     &trans     &trans
 &bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                       &trans    &out OUT_USB &trans     &trans     &trans     &trans
-&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans       &trans     &trans     &trans     &trans
+&trans        &trans          &trans          &trans          &trans          &trans                             &trans    &trans       &trans     &kp LG(L)  &trans     &trans
 &trans        &trans          &trans          &trans          &trans          &trans        &trans   &trans      &trans    &trans       &trans     &trans     &trans     &sys_reset
                                               &trans          &trans          &out OUT_BLE  &trans   &trans      &trans    &trans       &trans
             >;
